@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        body{
+            height:100vh;
+            width:100vw;
+            
+        }
+        .container{
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            width: 100%;
+            justify-content: center;
+            align-items: center;
+            transition: all 2.0s ease;
+        }
+        button{
+            margin-top: 20px;
+            cursor: pointer;
+            background-color: black;
+            padding:2em;
+            text-transform: uppercase;
+            color: white;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- <h1 id="result"></h1> -->
+        <button onclick="rgb()">Next color</button>
+    </div>
+    <script>
+        function rgb(){
+            let display = document.querySelector(".container")
+            //let result = document.querySelector("h1")
+            let red; let green; let blue;
+
+            red = Math.floor(Math.random() * 256);
+            green = Math.floor(Math.random() * 256);
+            blue = Math.floor(Math.random() * 256);
+
+            const color ='rgb(' + red + "," + green + "," + blue + ')'
+            //console.log(color);
+            display.style.background = color;
+            //result.innerHTML = color;
+            //result.style.color = color;
+        }
+    </script>
+</body>
+</html>
